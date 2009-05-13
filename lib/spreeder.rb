@@ -1,0 +1,1 @@
+require 'spreeder/spreeding_session'
