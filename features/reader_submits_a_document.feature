@@ -1,16 +1,14 @@
 Feature: reader submits a document
 
   The reader submits a document. 
-  Spreedy Gonzales checks if a file exists
-  And if its readable
+  Spreedy Gonzales checks if a file exists and if its readable
 
   Scenario Outline: submit document
-    Given the file is <file>
+    Given I am starting a spreeding-session
     When I submit <file>
-    Then the spreeding session should say: <quotation> 
+    Then I should get a response: <message> 
 
   Scenarios:
-    |        file           |               quotation												 |
+    |        file           |               message											     |
     | i_dont_exist.txt      | "Sorry, unable to find the required document"  |
-    | exists_unreadable.jpg | "Sorry, the file you submitted is not readable"|
     | exists_readable.txt   | "Initializing spreeding"                       | 
